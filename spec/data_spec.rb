@@ -12,14 +12,17 @@ describe DataStore do
   end
 
   describe '#save_data' do
-    it 'stores data in a hash' do
+    it 'can store data in a hash' do
       store.save_data(key, value)
       expect(store.data[key]).to equal value
     end
   end
 
   describe '#get_data' do
-
+    it 'returns stored data' do
+      store.save_data(key, value)
+      expect(store.get_data(key)).to equal value
+    end
   end
 
 end

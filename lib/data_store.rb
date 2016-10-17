@@ -10,4 +10,10 @@ class DataStore
     @data[key] = value
   end
 
+  def get_data(key)
+    @data[key]
+  end
+
+
+
 end
