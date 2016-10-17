@@ -2,6 +2,8 @@ require 'sinatra/base'
 require_relative '../lib/data_store.rb'
 
 class DatabaseServer < Sinatra::Base
+
+  set :port, 4000
   enable :sessions
 
   get '/get' do
