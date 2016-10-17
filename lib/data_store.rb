@@ -14,6 +14,4 @@ class DataStore
     @data[key]
   end
 
-
-
 end
