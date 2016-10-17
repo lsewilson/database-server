@@ -9,20 +9,17 @@ class DatabaseServer < Sinatra::Base
   end
 
   post '/new' do
-    store = DataStore.new
-    session[:store] = store
+    session[:store] = DataStore.new
     redirect '/'
   end
 
   get '/get' do
-    store = session[:store]
-    @value = store.get_data(params.keys[0])
+    @value = session[:store].get_data(params.keys[0])
     erb :get
   end
 
   get '/set' do
-    store = session[:store]
-    store.save_data(params.keys[0], params.values[0])
+    session[:store].save_data(params.keys[0], params.values[0])
     redirect '/'
   end
 
