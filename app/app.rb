@@ -4,23 +4,18 @@ require_relative '../lib/data_store.rb'
 class DatabaseServer < Sinatra::Base
   enable :sessions
 
-  get '/' do
-    erb :index
-  end
-
-  post '/new' do
-    session[:store] = DataStore.new
-    redirect '/'
-  end
-
   get '/get' do
+    @key = params.keys[0]
     @value = session[:store].get_data(params.keys[0])
     erb :get
   end
 
   get '/set' do
+    unless session[:store]
+      session[:store] = DataStore.new
+    end
     session[:store].save_data(params.keys[0], params.values[0])
-    redirect '/'
+    redirect '/get'
   end
 
   # start the server if ruby file executed directly
