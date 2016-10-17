@@ -2,11 +2,11 @@
 
 This is my solution to the following tech test:
 
-*"Before your interview, write a program that runs a server that is accessible on http://localhost:4000/. When your server receives a request on http://localhost:4000/set?somekey=somevalue it should store the passed key and value in memory. When it receives a request on http://localhost:4000/get?key=somekey it should return the value stored at somekey.
+> "Before your interview, write a program that runs a server that is accessible on http://localhost:4000/. When your server receives a request on http://localhost:4000/set?somekey=somevalue it should store the passed key and value in memory. When it receives a request on http://localhost:4000/get?key=somekey it should return the value stored at somekey.
 
-During your [mock] interview, you will pair on saving the data to a file."
+> During your [mock] interview, you will pair on saving the data to a file."
 
-Create a new git repository and write code to fulfill the brief to the best of your ability. Store the data in memory, not in a database, but bear in mind that you will later need to add a database to this code.*
+> Create a new git repository and write code to fulfill the brief to the best of your ability. Store the data in memory, not in a database, but bear in mind that you will later need to add a database to this code.
 
 ## Installation
 
@@ -41,4 +41,4 @@ I started by thinking about a classic MVC structure, but instead of using a clas
 
 I chose to use Ruby and Sinatra for this problem as all I needed was a simple server, which could deal with two requests to get and set data.
 
-Once I had connected the server and my DataStore class, I created a way of initializing a new database from the browser and setting it to a global variable. This was then refactored to store the DataStore instance as a session, which is created on the first /set? request. 
+Once I had connected the server and my DataStore class, I created a way of initializing a new database from the browser and setting it to a global variable. This was then refactored to store the DataStore instance as a session, which is created on the first /set? request.
