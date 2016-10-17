@@ -8,13 +8,12 @@ describe DataStore do
   let(:value) { double :value }
 
   it 'initializes with an empty hash attribute' do
-    expect(store.data).to be_empty
+    expect(store.get_data(key)).to be_nil
   end
 
   describe '#save_data' do
     it 'can store data in a hash' do
-      store.save_data(key, value)
-      expect(store.data[key]).to equal value
+      expect(store.save_data(key, value)).to equal value
     end
   end
 

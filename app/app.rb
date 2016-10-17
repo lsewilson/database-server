@@ -7,8 +7,8 @@ class DatabaseServer < Sinatra::Base
   enable :sessions
 
   get '/get' do
-    @key = params.keys[0]
-    @value = session[:store].get_data(params.keys[0])
+    @key = params[:key]
+    @value = session[:store].get_data(@key)
     erb :get
   end
 
