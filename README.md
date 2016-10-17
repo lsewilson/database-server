@@ -37,7 +37,7 @@ Getting data from memory:
 
 ### Approach to problem
 
-I started by thinking about a classic MVC structure, but instead of using a classic database model, I chose to create a data storage class with an empty hash property.
+I started by thinking about the typical MVC structure, but instead of using a classic database model, I chose to create a data storage class with an empty hash property.
 
 I chose to use Ruby and Sinatra for this problem as all I needed was a simple server, which could deal with two requests to get and set data.
 
